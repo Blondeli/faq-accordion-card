@@ -1,0 +1,21 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --title-accent-color: hsl(238, 29%, 16%);
+  --arrow-color: hsl(14, 88%, 65%);
+  --bg-gradient-one: hsl(273, 75%, 66%);
+  --bg-gradient-two: hsl(240, 73%, 65%);
+  --title-color: hsl(237, 12%, 33%);
+  --text-color: hsl(240, 6%, 50%);
+  --accent-color: hsl(240, 5%, 91%);
+  --card-shadow: 0 50px 50px -20px rgba(53, 18, 122, 0.5);
+}
+
+body {
+  font-family: "Kumbh Sans", sans-serif;
+  font-size: 0.75rem;
+}
