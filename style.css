@@ -6,7 +6,7 @@
 
 :root {
   --title-accent-color: hsl(238, 29%, 16%);
-  --arrow-color: hsl(14, 88%, 65%);
+  --hover-color: hsl(14, 88%, 65%);
   --bg-gradient-one: hsl(273, 75%, 66%);
   --bg-gradient-two: hsl(240, 73%, 65%);
   --title-color: hsl(237, 12%, 33%);
@@ -16,6 +16,104 @@
 }
 
 body {
+  align-items: center;
+  background: linear-gradient(var(--bg-gradient-one), var(--bg-gradient-two));
   font-family: "Kumbh Sans", sans-serif;
   font-size: 0.75rem;
+  display: flex;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+main {
+  background: white;
+  border-radius: 23px;
+  max-width: 920px;
+  padding: 1.5rem 3rem;
+  width: 87%;
+}
+
+h1 {
+  color: var(--title-accent-color);
+  font-size: 2rem;
+  margin: 5.25rem 0 1.875rem 0;
+  text-align: center;
+}
+
+ul {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  list-style-type: none;
+  width: 100%;
+}
+
+li {
+  max-width: 350px;
+}
+
+input {
+  display: none;
+}
+
+label {
+  color: var(--title-color);
+  cursor: pointer;
+  display: block;
+  font-size: 0.8125rem;
+  padding: 1rem 2rem 0 0;
+  position: relative;
+  transition: all 200ms ease-in-out;
+}
+
+/* Add arrow after lable */
+label::after {
+  content: url(images/icon-arrow-down.svg);
+  position: absolute;
+  right: 15px;
+  top: 15px;
+}
+
+input:checked + label::after {
+  transform: rotate(180deg);
+}
+
+label:hover {
+  color: var(--hover-color);
+}
+
+hr {
+  background-color: var(--accent-color);
+  border: none;
+  height: 1px;
+  margin-top: 1rem;
+}
+
+/* Make content invisible */
+input + label + .content {
+  color: var(--text-color);
+  height: 0px;
+  line-height: 1.125rem;
+  margin-top: 0px;
+  opacity: 0;
+  overflow: hidden;
+  transition: all 300ms ease-in-out;
+}
+
+/* Make content visible */
+input:checked + label + .content {
+  height: auto;
+  margin-top: 0.75rem;
+  opacity: 1;
+}
+
+input:checked + label {
+  color: var(--title-accent-color);
+  font-weight: 700;
+}
+
+@media (min-width: 768px) {
+  ul {
+    align-items: flex-end;
+  }
 }
